@@ -1,8 +1,11 @@
 import datetime
 from operator import itemgetter
+
+print('Enter the accuracy (100 - two decimals, 1000 - 3 decimals etc')
+accuracateTo = int(input())
+
 print('Enter the total length (or height, it is a square you know):')
-# we need to work with two decimals here so that's why we use 100
-totalGridLength = int(input()) * 100
+totalGridLength = int(input()) * accuracateTo
 
 print('Enter the amount of squares per row. needs to make sense.')
 squaresPerRow = int(input())
@@ -39,8 +42,8 @@ def addNodeToString(lowerLeftCorner, lowerRightCorner, upperRightCorner, upperLe
 
 def addCoordinateToString(x, y):
 	currentCoordinateString = "{0} {1}\n".format(
-		str(float(x)/100),
-		str(float(y)/100))
+		str(float(x)/accuracateTo),
+		str(float(y)/accuracateTo))
 	global coordinateString
 	coordinateString += currentCoordinateString
 
@@ -62,7 +65,7 @@ if dumbMode:
 		addCoordinateToString(totalGridLength, y)
 
 	# then do most of the top row - except the first and last point for whatever goddamn reason
-	for x in range(distanceBetweenPoints, 96, distanceBetweenPoints):
+	for x in range(distanceBetweenPoints, topOfRange, distanceBetweenPoints):
 		addCoordinateToString(x, totalGridLength)
 
 	# now lets add the last two points
