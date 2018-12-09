@@ -6,7 +6,7 @@ totalGridLength = int(input()) * 100
 
 print('Enter the amount of squares per row. needs to make sense.')
 squaresPerRow = int(input())
-distanceBetweenPoints = 100 / squaresPerRow
+distanceBetweenPoints = totalGridLength / squaresPerRow
 
 print('use dumb mode? (by default it does not use dumb mode) (y/n)')
 useDumbModeString = raw_input()
